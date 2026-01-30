@@ -10,7 +10,15 @@ Config.Placement = {
     MaxDistance = 15.0,
     RotationStep = 1.5,
     ZOffset = 0.0,
-    RightOffset = 0.15,
+    RightOffset = 0.0,
+    FinalOffset = {
+        Forward = 0.0,
+        Back = 0.0,
+        Right = 0.0,
+        Left = 0.0,
+        Up = 0.0,
+        Down = 0.0
+    },
     ConfirmKey = 191, -- Enter
     CancelKey = 194, -- Backspace
     RotateLeftKey = 174, -- Left arrow

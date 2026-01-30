@@ -75,6 +75,25 @@ local function getCameraRight()
     return vector3(math.cos(z), math.sin(z), 0.0)
 end
 
+local function applyFinalOffset(coords, heading)
+    if not coords then return coords end
+    local offset = (Config.Placement and Config.Placement.FinalOffset) or {}
+    local forward = (offset.Forward or 0.0) - (offset.Back or 0.0)
+    local right = (offset.Right or 0.0) - (offset.Left or 0.0)
+    local up = (offset.Up or 0.0) - (offset.Down or 0.0)
+    if forward == 0.0 and right == 0.0 and up == 0.0 then
+        return coords
+    end
+    local rad = math.rad(heading or 0.0)
+    local forwardVec = vector3(-math.sin(rad), math.cos(rad), 0.0)
+    local rightVec = vector3(math.cos(rad), math.sin(rad), 0.0)
+    return {
+        x = coords.x + (forwardVec.x * forward) + (rightVec.x * right),
+        y = coords.y + (forwardVec.y * forward) + (rightVec.y * right),
+        z = coords.z + up
+    }
+end
+
 local function openUI(printerId, imageUrl, photoState, backImageUrl, backPhotoState)
     if nuiOpen then return end
     currentPrinterId = printerId
@@ -180,7 +199,7 @@ local function startPlacement()
     local rotation = { x = 0.0, y = 0.0, z = GetEntityHeading(previewPrinter) }
     local minDim, _ = GetModelDimensions(joaat(model))
     local zOffset = -minDim.z + ((Config.Placement and Config.Placement.ZOffset) or 0.0)
-    local rightOffset = (Config.Placement and Config.Placement.RightOffset) or 0.0
+    local rightOffset = 0.0
     lastPlaceHeading = rotation.z
 
     CreateThread(function()
@@ -214,6 +233,7 @@ local function startPlacement()
             if IsControlJustPressed(0, confirmKey) then
                 local placeCoords = lastPlaceCoords or lastHitCoords or GetEntityCoords(previewPrinter)
                 local heading = lastPlaceHeading or GetEntityHeading(previewPrinter)
+                placeCoords = applyFinalOffset(placeCoords, heading)
                 TriggerServerEvent('yy-bcards:server:PlacePrinter', {
                     x = placeCoords.x,
                     y = placeCoords.y,
