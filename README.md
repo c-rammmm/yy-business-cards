@@ -45,18 +45,18 @@ Download Instructions:
     client = {
         export = 'yy-business-cards.usePrinter'
     }
-},
+},```
 
-['blank_business_card'] = {
+```['blank_business_card'] = {
     name = 'blank_business_card',
     label = 'Blank Business Card',
     description = 'Blank card for printing',
     weight = 1,
     stack = true,
     close = true
-},
+},```
 
-['business_card'] = {
+```['business_card'] = {
     name = 'business_card',
     label = 'Business Card',
     description = 'Printed business card',
