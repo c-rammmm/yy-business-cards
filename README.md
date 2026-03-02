@@ -2,10 +2,10 @@
 
 Business Cards is a printer system for QBCore servers that lets players place printers, save a photo, adjust the crop with zoom/drag, and print usable business cards. Everything is done with target interactions — no commands needed.
 
-Changes/Updated Features:
+### New/Updated Features:
 - Compatabiity with QBCore
 
-Main features:
+### Main features:
 - Place printers anywhere with a live preview.
 - Save a photo URL and crop/zoom before printing.
 - Print multiple cards at once with configurable limits.
@@ -26,7 +26,7 @@ you can join his discord for support: https://discord.gg/PqaFRdkpxM
 <img width="1027" height="618" alt="Screenshot 2026-01-06 124623" src="https://github.com/user-attachments/assets/2dcd0c66-bc03-403f-8fd1-2994452441bb" />
 
 
-Download Instructions:
+### Download Instructions:
 
 - Download the script as a zip, extract it into your resources folder then add ensure yy-business-cards to your server.cfg.
 - Run the business_printers.sql in your servers database.
