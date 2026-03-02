@@ -81,4 +81,3 @@ ADDITIONAL TERMS FOR FIVEM/CFX.RE DISTRIBUTION:
 3. Modified versions must maintain original credits
 4. Support is provided on a best-effort basis
 5. No warranty is provided for production use
-```
