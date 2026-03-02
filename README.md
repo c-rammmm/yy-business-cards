@@ -31,44 +31,44 @@ Download Instructions:
 - Download the script as a zip, extract it into your resources folder then add ensure yy-business-cards to your server.cfg.
 - Run the business_printers.sql in your servers database.
 - Add the items into your ox_inventory items.lua file.
-    ```['business_printer'] = {
-    name = 'business_printer',
-    label = 'Printer',
-    description = 'Place a printer to create business cards',
-    weight = 1500,
-    stack = false,
-    close = true,
-    consume = 0,
-    server = {
-        export = 'yy-business-cards.usePrinter'
-    },
-    client = {
-        export = 'yy-business-cards.usePrinter'
-    }
-},
-```
 
-```['blank_business_card'] = {
-    name = 'blank_business_card',
-    label = 'Blank Business Card',
-    description = 'Blank card for printing',
-    weight = 1,
-    stack = true,
-    close = true
+ ```lua
+['business_printer'] = {
+ name = 'business_printer',
+ label = 'Printer',
+ description = 'Place a printer to create business cards',
+ weight = 1500,
+ stack = false,
+ close = true,
+ consume = 0,
+ server = {
+     export = 'yy-business-cards.usePrinter'
+ },
+ client = {
+     export = 'yy-business-cards.usePrinter'
+ }
 },
-```
 
-```['business_card'] = {
-    name = 'business_card',
-    label = 'Business Card',
-    description = 'Printed business card',
-    weight = 1,
-    stack = true,
-    close = true,
-    client = {
-        image = 'business_card.png',
-        export = 'yy-business-cards.useBusinessCard'
-    }
+['blank_business_card'] = {
+ name = 'blank_business_card',
+ label = 'Blank Business Card',
+ description = 'Blank card for printing',
+ weight = 1,
+ stack = true,
+ close = true
+},
+
+['business_card'] = {
+ name = 'business_card',
+ label = 'Business Card',
+ description = 'Printed business card',
+ weight = 1,
+ stack = true,
+ close = true,
+ client = {
+     image = 'business_card.png',
+     export = 'yy-business-cards.useBusinessCard'
+ }
 },
 ```
   
@@ -81,3 +81,4 @@ ADDITIONAL TERMS FOR FIVEM/CFX.RE DISTRIBUTION:
 3. Modified versions must maintain original credits
 4. Support is provided on a best-effort basis
 5. No warranty is provided for production use
+```
