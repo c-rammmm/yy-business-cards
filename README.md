@@ -1,6 +1,9 @@
 # yy-business-cards
 
-Business Cards is a printer system for QBox/QBX servers that lets players place printers, save a photo, adjust the crop with zoom/drag, and print usable business cards. Everything is done with target interactions — no commands needed.
+Business Cards is a printer system for QBCore servers that lets players place printers, save a photo, adjust the crop with zoom/drag, and print usable business cards. Everything is done with target interactions — no commands needed.
+
+Changes/Updated Features:
+- Compatabiity with QBCore
 
 Main features:
 - Place printers anywhere with a live preview.
@@ -12,7 +15,7 @@ Main features:
 
 Fully integrated with ox_target + ox_inventory.
 
-you can join our discord for support: https://discord.gg/PqaFRdkpxM
+you can join his discord for support: https://discord.gg/PqaFRdkpxM
 
 <img width="1866" height="748" alt="Screenshot 2026-01-04 120613" src="https://github.com/user-attachments/assets/f6ab081b-ec41-40d8-9837-f88a34d69aa6" />
 
@@ -28,40 +31,43 @@ Download Instructions:
 - Download the script as a zip, extract it into your resources folder then add ensure yy-business-cards to your server.cfg.
 - Run the business_printers.sql in your servers database.
 - Add the items into your ox_inventory items.lua file.
-    ['business_printer'] = {
-        label = 'Printer',
-        description = 'Place a printer to create business cards',
-        weight = 1500,
-        stack = false,
-        close = true,
-        consume = 0,
-        server = {
-            export = 'yy-business-cards.usePrinter'
-        },
-        client = {
-            export = 'yy-business-cards.usePrinter'
-        }
+    ```['business_printer'] = {
+    name = 'business_printer',
+    label = 'Printer',
+    description = 'Place a printer to create business cards',
+    weight = 1500,
+    stack = false,
+    close = true,
+    consume = 0,
+    server = {
+        export = 'yy-business-cards.usePrinter'
     },
+    client = {
+        export = 'yy-business-cards.usePrinter'
+    }
+},
 
-    ['blank_business_card'] = {
-        label = 'Blank Business Card',
-        description = 'Blank card for printing',
-        weight = 1,
-        stack = true,
-        close = true
-    },
+['blank_business_card'] = {
+    name = 'blank_business_card',
+    label = 'Blank Business Card',
+    description = 'Blank card for printing',
+    weight = 1,
+    stack = true,
+    close = true
+},
 
-    ['business_card'] = {
-        label = 'Business Card',
-        description = 'Printed business card',
-        weight = 1,
-        stack = true,
-        close = true,
-        client = {
-            image = 'business_card.png',
-            export = 'yy-business-cards.useBusinessCard'
-        }
-    },
+['business_card'] = {
+    name = 'business_card',
+    label = 'Business Card',
+    description = 'Printed business card',
+    weight = 1,
+    stack = true,
+    close = true,
+    client = {
+        image = 'business_card.png',
+        export = 'yy-business-cards.useBusinessCard'
+    }
+},```
   
 - Add the images from the png folder into ox_inventory.
 
