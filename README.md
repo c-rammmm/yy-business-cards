@@ -45,7 +45,8 @@ Download Instructions:
     client = {
         export = 'yy-business-cards.usePrinter'
     }
-},```
+},
+```
 
 ```['blank_business_card'] = {
     name = 'blank_business_card',
@@ -54,7 +55,8 @@ Download Instructions:
     weight = 1,
     stack = true,
     close = true
-},```
+},
+```
 
 ```['business_card'] = {
     name = 'business_card',
@@ -67,7 +69,8 @@ Download Instructions:
         image = 'business_card.png',
         export = 'yy-business-cards.useBusinessCard'
     }
-},```
+},
+```
   
 - Add the images from the png folder into ox_inventory.
 
